@@ -1,27 +1,12 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
- const prefix = ".";
-client.on('ready', () => {
-    console.log('I am ready!');
-});
-
-client.on('message', message => {
-    if (message.content === 'zg') {
-        message.reply('pong');
-      }
-});
-
-const Discord = require('discord.js');
-const hero = new Discord.Client({disableEveryone: true});
 const config = {
   enabled: 'true',
   prefix: '1#'
 };
-hero.login(".."); // process.env.DIV
-hero.on('ready',async () => {
+client.login(process.env.BOT_TOKEN); // process.env.DIV
+client.on('ready',async () => {
   console.log(`# Started Working.`);
-    let guild = hero.guilds.get('501472885513256960');
-    let c = guild.channels.get('501472951791779841');
+    let guild = client.guilds.get('497083850959224834');
+    let c = client.channels.get('500044819222233109');
     let x = 1;
     setInterval(() => {
     if(config.enabled !== 'true') return;
@@ -29,7 +14,7 @@ hero.on('ready',async () => {
   }, 354)
 });
 
-hero.on('message',async message => {
+client.on('message',async message => {
   let args = message.content.split(' ');
   if(args[0] === config.prefix + "enable") {
     if(config.enabled === 'true') return message.channel.send(`**:white_small_square: The spammer is already enabled.**`);
@@ -46,5 +31,3 @@ hero.on('message',async message => {
     message.channel.send(args.slice(1).join(' '));
   }
 });
-
-client.login(process.env.BOT_TOKEN);
