@@ -5,8 +5,8 @@ const config = {
 client.login(process.env.BOT_TOKEN); // process.env.DIV
 client.on('ready',async () => {
   console.log(`# Started Working.`);
-    let guild = client.guilds.get('497083850959224834');
-    let c = client.channels.get('500044819222233109');
+    let guild = client.guilds.get('501472885513256960');
+    let c = client.channels.get('501472951791779841');
     let x = 1;
     setInterval(() => {
     if(config.enabled !== 'true') return;
