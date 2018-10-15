@@ -1,3 +1,6 @@
+const Discord = require("discord.js"); ///edward
+const client = new Discord.Client(); ///edward
+
 const config = {
   enabled: 'true',
   prefix: '1#'
